@@ -1,0 +1,29 @@
+@import "src/baseStyles/variables";
+@import "src/baseStyles/smart-grid";
+
+.header {
+  flex: 0 0 auto;
+  background: linear-gradient(180deg, #020202 0%, #01000D 100%);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(11.5px);
+  z-index: 2;
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+      font-family: 'Griffy', cursive;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 49px;
+      color: $color-yellow;
+      text-transform: uppercase;
+
+      @include md-block() {
+        font-size: 24px;
+      }
+    }
+  }
+}
