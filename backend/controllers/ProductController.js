@@ -84,9 +84,17 @@ export const remove = async (req, res) => {
 export const create = async (req, res) => {
   try {
     const doc = new ProductModel({
-      name: req.body.name,
-      description: req.body.description,
+      title: req.body.title,
+      category: req.body.category,
       price: req.body.price,
+      brand: req.body.brand,
+      description: req.body.description,
+      material: req.body.material,
+      sizes: req.body.sizes,
+      gender: req.body.gender,
+      color: req.body.color,
+      season: req.body.season,
+      country: req.body,
       imgUrl: req.body.imgUrl,
     });
     
@@ -110,9 +118,17 @@ export const update = async (req, res) => {
         _id: productId,
       },
       {
-        name: req.body.name,
-        description: req.body.description,
+        title: req.body.title,
+        category: req.body.category,
         price: req.body.price,
+        brand: req.body.brand,
+        description: req.body.description,
+        material: req.body.material,
+        sizes: req.body.sizes,
+        gender: req.body.gender,
+        color: req.body.color,
+        season: req.body.season,
+        country: req.body,
         imgUrl: req.body.imgUrl,
       },
     );

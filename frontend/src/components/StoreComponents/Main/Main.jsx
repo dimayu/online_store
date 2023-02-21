@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { PageGenres, Home, PageCategories, PageMovie } from '../../Pages';
+import { PageGenres, Home, PageCategories, PageMovie } from '../../../Pages';
 
 import './Main.scss';
 

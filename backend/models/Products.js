@@ -1,11 +1,15 @@
 import mongoose from 'mongoose';
 
 const ProductSchema = new mongoose.Schema({
-    name: {
+    title: {
       type: String,
       required: true,
     },
-    description: {
+    id: {
+      type: String,
+      required: true,
+    },
+    category: {
       type: String,
       required: true,
     },
@@ -13,7 +17,35 @@ const ProductSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    imgUrl: {
+    brand: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    material: {
+      type: String,
+      required: true,
+    },
+    sizes: {
+      type: String,
+      required: true,
+    },
+    gender: {
+      type: String,
+      required: true,
+    },
+    color: {
+      type: String,
+      required: true,
+    },
+    season: {
+      type: String,
+      required: true,
+    },
+    country: {
       type: String,
       required: true,
     },
@@ -21,6 +53,10 @@ const ProductSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       require: true,
+    },
+    imgUrl: {
+      type: String,
+      required: true,
     },
   },
   {

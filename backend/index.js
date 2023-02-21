@@ -29,7 +29,18 @@ const upload = multer({ storage });
 
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
+  credentials: true
+}));
+app.use(function (req, res, next) {
+  
+  res.header('Access-Control-Allow-Origin', "http://localhost:3000");
+  res.header('Access-Control-Allow-Headers', true);
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  next();
+});
 
 app.post('/auth/login', loginValidation, UserController.login);
 app.post('/auth/register', registerValidation, UserController.register);
