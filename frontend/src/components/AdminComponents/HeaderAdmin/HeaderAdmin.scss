@@ -1,0 +1,30 @@
+@import "../../../baseStyles/variables";
+
+.header-admin {
+  flex: 0 0 auto;
+  padding: 12px 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(11.5px);
+  z-index: 2;
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+
+    &__logo {
+      img {
+        width: 60px;
+      }
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+
+      &--user {
+        text-align: center;
+        margin-left: $offset-l;
+      }
+    }
+  }
+}
