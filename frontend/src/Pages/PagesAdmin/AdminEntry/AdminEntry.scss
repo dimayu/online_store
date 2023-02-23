@@ -1,0 +1,11 @@
+@import "../../../baseStyles/variables";
+@import "../../../baseStyles/base";
+
+.form-entry {
+  width: 500px;
+  margin: auto;
+
+  &__input {
+    margin-bottom: $offset-l;
+  }
+}

@@ -3,7 +3,7 @@
 
 .header {
   flex: 0 0 auto;
-  background: linear-gradient(180deg, #020202 0%, #01000D 100%);
+  padding: 12px 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(11.5px);
   z-index: 2;
@@ -14,15 +14,61 @@
     align-items: center;
 
     &__logo {
-      font-family: 'Griffy', cursive;
-      font-weight: 400;
-      font-size: 36px;
-      line-height: 49px;
-      color: $color-yellow;
-      text-transform: uppercase;
+      img {
+        width: 60px;
+      }
+    }
 
-      @include md-block() {
-        font-size: 24px;
+    &__nav {
+      width: 50%;
+
+      &__ul {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+          color: $color-black;
+          text-transform: uppercase;
+
+          &:hover {
+            color: $color-green;
+          }
+        }
+      }
+    }
+
+    &__right {
+      &--item {
+        svg {
+          display: inline-block;
+          width: 24px;
+          height: 22px;
+        }
+
+        &:hover {
+          svg {
+            fill: $color-green;
+          }
+        }
+      }
+
+      &--cart {
+        position: relative;
+
+        &-num {
+          width: 16px;
+          height: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: -4px;
+          right: -4px;
+          background-color: $color-green-1;
+          border-radius: 50%;
+          font-size: 10px;
+          color: $color-white;
+        }
       }
     }
   }

@@ -1,0 +1,66 @@
+@import "variables";
+
+//Input text
+.input-block {
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+  display: block;
+
+  &__input {
+    border: none;
+    margin: $offset-x 0 0 0;
+    padding: 10px 0;
+    outline: none;
+    border-bottom: solid 1px #212121;
+    width: 100%;
+    color: $color-black;
+    -webkit-tap-highlight-color: transparent;
+
+    &:focus ~ .input-block__line, &:valid ~ .input-block__line {
+      width: 100%;
+    }
+
+    &:focus ~ .input-block__label, &:valid ~ .input-block__label {
+      font-size: 11px;
+      color: $color-green;
+      top: 0;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    left: 0;
+    top: 22px;
+    transition: 0.2s cubic-bezier(0, 0, 0.3, 1);
+    pointer-events: none;
+    color: $color-black;
+    user-select: none;
+  }
+
+  &__line {
+    height: 2px;
+    background-color: $color-green-1;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    transition: 0.2s cubic-bezier(0, 0, 0.3, 1);
+  }
+}
+
+//btn
+.btn {
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 0 $offset-m;
+  box-sizing: border-box;
+  background-color: $color-green-1;
+  color: $color-white;
+  font-weight: 500;
+  border-radius: 2px;
+}

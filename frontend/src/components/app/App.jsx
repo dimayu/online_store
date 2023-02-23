@@ -1,15 +1,17 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 
-import { Admin } from '../index';
+import { AdminEntry, AdminPanel, Home } from '../../Pages';
 
 import './App.scss';
 
 export const App = () => {
   return (
     <div className="App">
-        <Routes>
-          <Route path="/products" element={<Admin/>}/>
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/admin-entry" element={<AdminEntry/>}/>
+        <Route path="/admin-panel" element={<AdminPanel/>}/>
+      </Routes>
     </div>
   );
 };

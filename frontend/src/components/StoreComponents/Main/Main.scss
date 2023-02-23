@@ -1,7 +1,11 @@
 @import "../../../baseStyles/variables";
 @import "../../../baseStyles/smart-grid";
 
+a {
+  color: $color-green;
+}
+
 .main {
   flex: 1 0 auto;
-  background-color: #161214;
+  background-color: #fff;
 }
