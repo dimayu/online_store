@@ -54,7 +54,7 @@ const ProductSchema = new mongoose.Schema({
       ref: 'User',
       require: true,
     },
-    imgUrl: {
+    img: {
       type: String,
       required: true,
     },

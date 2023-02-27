@@ -95,7 +95,7 @@ export const create = async (req, res) => {
       color: req.body.color,
       season: req.body.season,
       country: req.body,
-      imgUrl: req.body.imgUrl,
+      img: req.body.img,
     });
     
     const product = await doc.save();
@@ -129,7 +129,7 @@ export const update = async (req, res) => {
         color: req.body.color,
         season: req.body.season,
         country: req.body,
-        imgUrl: req.body.imgUrl,
+        img: req.body.img,
       },
     );
     
