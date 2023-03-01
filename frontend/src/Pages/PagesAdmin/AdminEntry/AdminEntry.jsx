@@ -2,8 +2,9 @@ import { useForm } from 'react-hook-form';
 import { Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import './AdminEntry.scss';
 import { fetchAuth, selectIsAuth } from '../../../Redux/Slices/Auth';
+
+import './AdminEntry.scss';
 
 export const AdminEntry = () => {
   const isAuth = useSelector(selectIsAuth);

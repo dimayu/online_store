@@ -2,11 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 import { fetchProducts } from '../../../Redux/Slices/Products';
-import { Pagination } from '../../Pagination';
-import { ProductAdmin } from '../ProductAdmin';
+import { Pagination, ProductAdmin, Search } from '../../../Components/index';
 
 import './ProductsAdmin.scss';
-import { Search } from '../../Search';
 
 export const ProductsAdmin = () => {
   const dispatch = useDispatch();
