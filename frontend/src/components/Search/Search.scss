@@ -1,0 +1,12 @@
+@import "../../baseStyles/variables";
+
+.filters__search {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .input-block {
+    width: 60%;
+  }
+}

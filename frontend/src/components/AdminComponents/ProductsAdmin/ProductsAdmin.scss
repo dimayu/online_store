@@ -1,0 +1,13 @@
+@import "../../../baseStyles/variables";
+
+.products {
+  width: 100%;
+}
+
+.filters {
+  width: 100%;
+  padding: $offset-m;
+  background-color: $color-grey;
+  box-sizing: border-box;
+}
+

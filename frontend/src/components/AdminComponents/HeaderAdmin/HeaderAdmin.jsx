@@ -1,8 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { AiOutlineUser } from "react-icons/ai";
 
-import './HeaderAdmin.scss';
 import { logout } from '../../../Redux/Slices/Auth';
+
+import './HeaderAdmin.scss';
 
 export const HeaderAdmin = () => {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ export const HeaderAdmin = () => {
   const onClickLogout = () => {
     if (window.confirm('Вы уверены, что хотите выйти?')) {
       dispatch(logout());
+      window.localStorage.removeItem('token');
     }
   }
   

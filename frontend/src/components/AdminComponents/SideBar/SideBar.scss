@@ -1,0 +1,29 @@
+@import "../../../../src/baseStyles/variables";
+
+.aside {
+  width: 180px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-green-2;
+
+  &__list {
+    &__item {
+      &--link {
+        display: flex;
+        align-items: center;
+        padding: $offset-x;
+        font-size: 20px;
+
+        &:hover, &.active {
+          background-color: $color-green-1;
+          color: $color-white;
+        }
+
+        span {
+          margin-left: $offset-x;
+        }
+      }
+    }
+  }
+}
