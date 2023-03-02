@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchAuthMe } from '../../Redux/Slices/Auth';
 
+import { fetchAuthMe } from '../../Redux/Slices/Auth';
 import { AdminEntry, AdminPanel, Home } from '../../Pages';
 
 import './App.scss';

@@ -1,8 +1,8 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Home } from '../../../Pages';
+import { Header } from '../../../Components/index';
 
 import './Main.scss';
-import { Header } from '../Header';
 
 export const Main = () => {
     return (
