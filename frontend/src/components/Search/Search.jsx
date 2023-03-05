@@ -15,10 +15,11 @@ export const Search = ({ value }) => {
         className="input-block">
         <input type="text"
                className="input-block__input"
-               placeholder="Найти"
                onChange={(e) => setValueSearch(e.target.value)}
+               required
         />
         <span className="input-block__line"></span>
+        <label className="input-block__label">Найти</label>
       </div>
     </div>
   );

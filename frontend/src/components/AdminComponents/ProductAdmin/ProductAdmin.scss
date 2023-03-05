@@ -8,10 +8,19 @@
   padding: 4px;
   cursor: pointer;
 
+  &:hover {
+    background-color: $color-green-2;
+  }
+
   &--header {
     padding: 12px;
     font-weight: 600;
     font-size: 20px;
+    cursor: default;
+    
+    &:hover {
+      background-color: #fff;
+    }
   }
 
   &__img {

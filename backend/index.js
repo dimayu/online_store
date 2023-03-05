@@ -3,11 +3,20 @@ import multer from 'multer';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 import { registerValidation, loginValidation, productsValidation } from './validations/validation.js';
 import checkAuth from './utils/checkAuth.js';
-import { ProductController, UserController} from './controllers/index.js'
+import {
+  ProductController,
+  UserController,
+  CategoriesController,
+  BrandsController,
+  GendersController,
+  SeasonsController,
+  CountriesController
+} from './controllers/index.js';
 
 mongoose
 .connect(process.env.MONGO_URL)
@@ -20,12 +29,12 @@ const storage = multer.diskStorage({
   destination: (_, __, cb) => {
     cb(null, 'uploads');
   },
-  fillename: (_, file, cb) => {
+  filename: (_, file, cb) => {
     cb(null, file.originalname);
   },
 });
 
-const upload = multer({ storage });
+const upload = multer({storage});
 
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
@@ -46,11 +55,18 @@ app.post('/auth/login', loginValidation, UserController.login);
 app.post('/auth/register', registerValidation, UserController.register);
 app.get('/auth/me', checkAuth, UserController.getMe);
 
-app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
+app.post('/uploads', checkAuth, upload.single('image'), (req, res) => {
   res.json({
     url: `/uploads/${req.file.originalname}`,
   });
-})
+});
+
+app.get('/categories', CategoriesController.getAll);
+app.get('/brands', BrandsController.getAll);
+app.get('/genders', GendersController.getAll);
+app.get('/genders', GendersController.getAll);
+app.get('/seasons', SeasonsController.getAll);
+app.get('/countries', CountriesController.getAll);
 
 app.get('/products', ProductController.getAll);
 app.get('/products/:id', ProductController.getOne);

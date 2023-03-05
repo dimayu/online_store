@@ -6,8 +6,8 @@
 
 .filters {
   width: 100%;
+  display: flex;
   padding: $offset-m;
   background-color: $color-grey;
   box-sizing: border-box;
 }
-

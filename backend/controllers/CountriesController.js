@@ -1,14 +1,14 @@
-import ProductModel from '../models/Products.js';
+import CountriesModel from '../models/Countries.js';
 
 export const getAll = async (req, res) => {
   try {
-    const products = await ProductModel.find();
+    const countries = await CountriesModel.find();
     
-    res.json(products);
+    res.json(countries);
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: 'Failed get products',
+      message: 'Failed get countries',
     });
   }
 };

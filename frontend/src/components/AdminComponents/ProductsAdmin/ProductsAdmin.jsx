@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { fetchProducts } from '../../../Redux/Slices/Products';
+import { fetchCategories } from '../../../Redux/Slices/Categories';
 import { Pagination, ProductAdmin, Search } from '../../../Components/index';
 
 import './ProductsAdmin.scss';
@@ -15,24 +17,29 @@ export const ProductsAdmin = () => {
   
   useEffect(() => {
     dispatch(fetchProducts());
+    dispatch(fetchCategories());
   }, []);
   
   const isProductsLoading = products.status === 'loading';
   
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentProducts = products.items.slice(indexOfFirstPost, indexOfLastPost);
-  const paginate = pageNumber => setCurrentPage(pageNumber);
-  
-  const searchHandler = (value) => setValue(value);
   const filteredProducts = products.items.filter(item => {
     return item.title.toLowerCase().includes(value.toLowerCase());
   });
   
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentProducts = filteredProducts.slice(indexOfFirstPost, indexOfLastPost);
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+  
+  const searchHandler = (value) => setValue(value);
+  
   return (
     <>
       <div className="filters">
-      <Search value={searchHandler}/>
+        <Search value={searchHandler}/>
+        <Link to="product/create" className="btn">
+          Создать товар
+        </Link>
       </div>
       <div className="products">
         <div className="products__item products__item--header">
@@ -51,9 +58,7 @@ export const ProductsAdmin = () => {
         </div>
         {(isProductsLoading
           ? [...Array(5)]
-          : (value !== '')
-            ? filteredProducts
-            : currentProducts).map((item, index) =>
+          : currentProducts).map((item, index) =>
           isProductsLoading ? (
             <div key={index}></div>
           ) : (
@@ -64,7 +69,7 @@ export const ProductsAdmin = () => {
         )}
         <Pagination
           postsPerPage={postsPerPage}
-          totalPosts={products.items.length}
+          totalPosts={filteredProducts.length}
           paginate={paginate}
           currentPage={currentPage}
         />

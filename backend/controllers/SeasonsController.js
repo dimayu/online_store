@@ -1,14 +1,14 @@
-import ProductModel from '../models/Products.js';
+import SeasonsModel from '../models/Seasons.js';
 
 export const getAll = async (req, res) => {
   try {
-    const products = await ProductModel.find();
+    const seasons = await SeasonsModel.find();
     
-    res.json(products);
+    res.json(seasons);
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: 'Failed get products',
+      message: 'Failed get seasons',
     });
   }
 };

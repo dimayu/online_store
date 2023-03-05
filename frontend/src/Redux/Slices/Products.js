@@ -7,10 +7,10 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async ()
 });
 
 const initialState = {
-    products: {
-      items: [],
-      status: 'loading',
-    }
+  products: {
+    items: [],
+    status: 'loading',
+  }
 };
 
 const productsSlice = createSlice({

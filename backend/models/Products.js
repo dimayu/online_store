@@ -7,56 +7,60 @@ const ProductSchema = new mongoose.Schema({
     },
     id: {
       type: String,
-      required: true,
+      required: false,
     },
     category: {
       type: String,
-      required: true,
+      required: false,
     },
     price: {
       type: String,
-      required: true,
+      required: false,
+    },
+    article: {
+      type: String,
+      required: false,
     },
     brand: {
       type: String,
-      required: true,
+      required: false,
     },
     description: {
       type: String,
-      required: true,
+      required: false,
     },
     material: {
       type: String,
-      required: true,
+      required: false,
     },
     sizes: {
       type: String,
-      required: true,
+      required: false,
     },
     gender: {
       type: String,
-      required: true,
+      required: false,
     },
     color: {
       type: String,
-      required: true,
+      required: false,
     },
     season: {
       type: String,
-      required: true,
+      required: false,
     },
     country: {
       type: String,
-      required: true,
+      required: false,
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      require: true,
+      require: false,
     },
     img: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   {

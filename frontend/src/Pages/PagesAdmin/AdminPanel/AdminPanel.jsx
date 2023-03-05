@@ -9,7 +9,7 @@ import './AdminPanel.scss';
 export const AdminPanel = () => {
   const isAuth = useSelector(selectIsAuth);
   
-  if (!isAuth) {
+  if (!window.localStorage.getItem('token') && !isAuth) {
     return <Navigate to="/admin-entry"/>;
   }
   
