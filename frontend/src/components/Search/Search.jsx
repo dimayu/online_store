@@ -19,7 +19,7 @@ export const Search = ({ value }) => {
                required
         />
         <span className="input-block__line"></span>
-        <label className="input-block__label">Найти</label>
+        <label className="input-block__label">Найти по названию</label>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ export const HeaderAdmin = () => {
       <div className="wrapper">
         <div className="header-admin__items">
           <div className="header-admin__items__item header-admin__items__logo">
-            <img src="logo.svg" alt="logo"/>
+            <img src="/logo.svg" alt="logo"/>
           </div>
           <div className="header-admin__items__item header-admin__items__right">
             <button className="btn" onClick={onClickLogout}>

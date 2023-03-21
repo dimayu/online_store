@@ -9,8 +9,8 @@ export const MainAdmin = () => {
     <div className="main-admin">
       <Routes>
         <Route path="products" element={<ProductsAdmin/>}/>
-        <Route path="products/product/:id" element={<ProductEditAdmin/>}/>
-        <Route path="products/product/create" element={<ProductEditAdmin/>}/>
+        <Route path="products/:id" element={<ProductEditAdmin/>}/>
+        <Route path="products/create" element={<ProductEditAdmin/>}/>
       </Routes>
       <Outlet/>
     </div>
