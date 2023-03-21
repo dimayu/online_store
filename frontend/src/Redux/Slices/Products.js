@@ -6,6 +6,10 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async ()
   return data;
 });
 
+export const fetchRemoveProduct = createAsyncThunk('products/fetchRemoveProduct', async (id) => {
+  await axios.delete(`/products/${id}`);
+});
+
 const initialState = {
   products: {
     items: [],
@@ -18,6 +22,7 @@ const productsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    //Getting
     [fetchProducts.pending]: (state) => {
       state.products.items = [];
       state.products.status = 'loading';
@@ -29,7 +34,11 @@ const productsSlice = createSlice({
     [fetchProducts.rejected]: (state) => {
       state.products.items = [];
       state.products.status = 'error';
-    }
+    },
+    //Remove
+    [fetchRemoveProduct.pending]: (state, action) => {
+      state.products.items = state.products.items.filter(obj => obj._id !== action.payload);
+    },
   }
 });
 

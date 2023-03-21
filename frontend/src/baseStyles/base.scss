@@ -12,6 +12,7 @@
     margin: $offset-x 0 0 0;
     padding: 10px 0;
     outline: none;
+    background-color: transparent;
     border-bottom: solid 1px #212121;
     width: 100%;
     color: $color-black;
@@ -85,5 +86,41 @@
     &:before {
       transform: translateX(0);
     }
+  }
+}
+
+//Checkbox
+.radio-block {
+  margin: 0 $offset-m $offset-m 0;
+
+  label {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+  }
+
+  input[type="radio"]:checked + &__custom-radio {
+    background-color: $color-green-1;
+    box-shadow: inset 0 0 0 4px #fff;
+  }
+
+  &__custom-radio {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 6px 0 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $color-green-1;
+    border-radius: 18px;
+    background-color: $color-green-1;
+    box-shadow: inset 0 0 0 12px #fff;
+    transition: all 180ms ease;
   }
 }

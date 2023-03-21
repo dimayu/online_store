@@ -11,27 +11,27 @@ const ProductSchema = new mongoose.Schema({
     },
     category: {
       type: String,
-      required: false,
+      required: true,
     },
     price: {
       type: String,
-      required: false,
+      required: true,
     },
     article: {
       type: String,
-      required: false,
+      required: true,
     },
     brand: {
       type: String,
-      required: false,
+      required: true,
     },
     description: {
       type: String,
-      required: false,
+      required: true,
     },
     material: {
       type: String,
-      required: false,
+      required: true,
     },
     sizes: {
       type: String,
@@ -39,28 +39,19 @@ const ProductSchema = new mongoose.Schema({
     },
     gender: {
       type: String,
-      required: false,
-    },
-    color: {
-      type: String,
-      required: false,
+      required: true,
     },
     season: {
       type: String,
-      required: false,
+      required: true,
     },
     country: {
       type: String,
-      required: false,
-    },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-      require: false,
+      required: true,
     },
     img: {
       type: String,
-      required: false,
+      required: true,
     },
   },
   {

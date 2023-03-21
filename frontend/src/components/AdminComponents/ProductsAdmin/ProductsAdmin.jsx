@@ -18,7 +18,7 @@ export const ProductsAdmin = () => {
   useEffect(() => {
     dispatch(fetchProducts());
     dispatch(fetchCategories());
-  }, []);
+  },[dispatch]);
   
   const isProductsLoading = products.status === 'loading';
   
@@ -37,7 +37,7 @@ export const ProductsAdmin = () => {
     <>
       <div className="filters">
         <Search value={searchHandler}/>
-        <Link to="product/create" className="btn">
+        <Link to="create" className="btn">
           Создать товар
         </Link>
       </div>

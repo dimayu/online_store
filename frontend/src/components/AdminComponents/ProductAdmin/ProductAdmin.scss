@@ -2,14 +2,20 @@
 
 .products__item {
   width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
   border-bottom: 1px solid $color-green;
   padding: 4px;
   cursor: pointer;
+  overflow: hidden;
 
   &:hover {
     background-color: $color-green-2;
+
+    .products__item__delete, .products__item__view {
+      transform: translateY(0);
+    }
   }
 
   &--header {
@@ -49,5 +55,18 @@
 
   &__content {
     position: relative;
+  }
+
+  &__delete, &__view {
+    position: absolute;
+    bottom: auto;
+    right: $offset-x;
+    transform: translateY(200%);
+    font-size: 22px;
+    color: $color-green;
+  }
+
+  &__view {
+    right: 54px;
   }
 }

@@ -1,44 +1,43 @@
 @import "../../../baseStyles/variables";
 
-.products__item {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid $color-green;
-  padding: 4px;
-  cursor: pointer;
+.product-wrapper {
+  padding: $offset-m 0;
+}
 
-  &--header {
-    padding: 12px;
-    font-weight: 600;
-    font-size: 20px;
+.product {
+  &__item {
+    margin-bottom: $offset-m;
+    padding: $offset-m;
+    background-color: $color-grey;
+    box-sizing: border-box;
+
+    &__name {
+      width: 100%;
+      margin-bottom: $offset-x;
+      font-weight: 600;
+    }
   }
 
   &__img {
-    min-width: 160px;
-    width: 15%;
-    overflow: hidden;
+    img {
+      width: 150px;
+      margin: $offset-l 0;
+    }
   }
 
-  &__art {
-    min-width: 100px;
-    width: 10%;
-    overflow: hidden;
+  &__description {
+    .input-block__input {
+      min-height: 80px;
+    }
   }
 
-  &__title {
-    min-width: 200px;
-    width: 55%;
-    overflow: hidden;
+  &__radio {
+    display: flex;
+    flex-wrap: wrap;
   }
+}
 
-  &__cat {
-    min-width: 100px;
-    width: 20%;
-    overflow: hidden;
-  }
-
-  &__content {
-    position: relative;
-  }
+.btn-save-product {
+  margin-left: auto;
+  margin-bottom: $offset-m;
 }
