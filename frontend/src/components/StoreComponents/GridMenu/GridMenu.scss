@@ -1,0 +1,77 @@
+@import "../../../baseStyles/variables";
+
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: $offset-x;
+  margin: $offset-l 0;
+
+  &__item {
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-grey;
+    cursor: pointer;
+
+    &:hover {
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      .grid-menu__item__text {
+      }
+    }
+
+    &__img {
+      width: 100%;
+      max-height: 0;
+      max-width: 0;
+      height: 100%;
+      object-fit: cover;
+      transition: max-width, max-height 1s;
+    }
+
+    &__text {
+      position: absolute;
+      transition: all 1s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: -5%;
+        box-shadow: inset 0 0 0 2px;
+        animation: clipMe 8s linear infinite;
+      }
+
+      h3 {
+        padding: $offset-x;
+        background-color: $color-green;
+        font-size: 18px;
+        font-weight: 900;
+        color: #fff;
+      }
+    }
+
+    @keyframes clipMe {
+      0%, 100% {
+        clip: rect(0px, 200px, 2px, 0px);
+      }
+      25% {
+        clip: rect(0px, 2px, 200px, 0px);
+      }
+      50% {
+        clip: rect(198px, 200px, 200px, 0px);
+      }
+      75% {
+        clip: rect(0px, 200px, 200px, 70px);
+      }
+    }
+  }
+}

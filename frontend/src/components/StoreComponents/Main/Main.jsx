@@ -1,18 +1,11 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { Home } from '../../../Pages';
-import { Header } from '../../../Components/index';
-
 import './Main.scss';
+import { HomeSlider, GridMenu } from '../../StoreComponents/index';
 
 export const Main = () => {
-    return (
-        <BrowserRouter>
-          <Header />
-          <main className="main">
-            <Routes>
-              <Route path="/" element={<Home/>}/>
-            </Routes>
-          </main>
-        </BrowserRouter>
-    );
+  return (
+    <main className="main">
+      <HomeSlider/>
+      <GridMenu/>
+    </main>
+  );
 };

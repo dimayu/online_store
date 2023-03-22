@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
 import { fetchProducts } from '../../../Redux/Slices/Products';
+import { Footer, Header, Main } from '../../../Components';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,10 @@ export const Home = () => {
   }, []);
   
   return (
-    <div>fsdfd</div>
+    <>
+      <Header/>
+      <Main/>
+      <Footer/>
+    </>
   );
 }

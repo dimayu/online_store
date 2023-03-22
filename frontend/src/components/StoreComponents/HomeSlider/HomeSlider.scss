@@ -1,0 +1,86 @@
+@import "../../../baseStyles/variables";
+
+.home-slider {
+  height: 700px;
+  background-color: $color-green-2;
+
+  .swiper-button-next, .swiper-button-prev {
+    color: $color-green;
+  }
+
+  .swiper-pagination {
+    left: auto;
+    right: 10%;
+    display: flex;
+    justify-content: flex-end;
+
+    &-bullet {
+      background-color: $color-green;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &__item.swiper-slide-active  {
+    position: relative;
+
+    .home-slider__item__text {
+      max-width: 50%;
+      position: absolute;
+      bottom: 0;
+      animation: outer-left 3s 3s cubic-bezier(0.5, 0, 0.1, 1) both;
+
+      &--inner {
+        background-color: $color-green;
+        padding: $offset-l;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        animation: text-clip 2s 2s cubic-bezier(0.5, 0, 0.1, 1) both;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 1s backwards;
+
+      @keyframes image-in {
+        from {
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+        to {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+    }
+  }
+}
+
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes outer-left {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes inner-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: none;
+  }
+}
